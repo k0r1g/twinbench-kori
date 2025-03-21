@@ -36,7 +36,7 @@ $A$ asks questions of $T$ and updates its memory until **$A$'s memory overlaps w
 1. **Success:**  
    - Memory Overlap Score **$M ≥ 95%$**.
 2. **Failure:**  
-   - A fails **Update Test ($U$)** or **Recall Test ($R$)** for **3 consecutive questions**.
+   - $A$ fails **Update Test ($U$)** or **Recall Test ($R$)** for **3 consecutive questions**.
 
 ---
 
@@ -46,25 +46,25 @@ For each question **$A$** asks **$T$**, compute:
 
 | Metric | Purpose | Pass Criteria |
 |-------|--------|----------------|
-| **Update Test ($U$)** | Checks if $A$’s memory gained new knowledge | $A$'s memory covers new portion of T’s memory |
-| **Recall Test ($R$)** | Ensures $A$ retains previously acquired info | $A$ passes pop-quiz on revealed knowledge |
-| **Memory Overlap Score ($M$)** | Measures total alignment between A and T | ≥ 95% overlap → success |
+| **Update Test ($U$)** | Checks if $A$’s memory gained new knowledge | $A$'s memory covers new portion of $T$’s memory |
+| **Recall Test ($R$)** | Ensures $A$ retains previously acquired info | $A$ passes eval on revealed knowledge |
+| **Memory Overlap Score ($M$)** | Measures total alignment between $A$ and $T$ | ≥ 95% overlap → success |
 
-**Score (S):**
-- **S = Number of successful questions asked until M ≥ 95%.**
-- **S = FAIL** if A fails U or R 3 times before reaching M ≥ 95%.
+**Score ($S$):**
+- **$S$ = Number of successful questions asked until $M ≥ 95%$.**
+- **$S$ = FAIL** if $A$ fails $U$ or $R$ 3 times before reaching $M ≥ 95%$.
 
 ---
 
-## Detailed Metric Definitions
+## Metric Definitions 
 
-### 1. Memory Overlap Score (M)
+### 1. Memory Overlap Score ($M$)
 
 **What it measures:**  
-Fraction of T’s memory chunks successfully internalized by A.
+Fraction of $T$’s memory chunks successfully internalised by $A$.
 
 **Implementation:**
-1. **Chunk** T’s memory into \( \{t_1, t_2, ..., t_K\} \) (e.g., paragraphs/facts).
+1. **Chunk** T’s memory into $$\{t_{\mathcal{1}}, t_{\mathcal{2}}, ..., t_{\mathcal{k}}\}$$ (e.g., paragraphs/facts).
 2. After each Q&A, A’s memory = \( \{a_1, a_2, ..., a_j\} \).
 3. For each \( t_i \), check if any \( a_m \) is semantically similar (cosine similarity ≥ threshold).
 4. Compute:
@@ -90,7 +90,7 @@ Does A’s question lead to **new knowledge**?
 ### 3. Recall Test (R)
 
 **What it measures:**  
-Has A retained and internalized the knowledge so far?
+Has A retained and internalised the knowledge so far?
 
 **Implementation:**
 1. After each Q&A, quiz A on randomly selected previously revealed chunks:
@@ -104,7 +104,7 @@ Has A retained and internalized the knowledge so far?
 
 ## Benchmark Procedure
 
-1. **Initialize:**
+1. **Initialise:**
    - T’s memory = \( \{t_1, ..., t_K\} \)
    - A starts empty memory.
    - Question count \( q = 0 \), fail streak = 0.
@@ -153,11 +153,11 @@ Has A retained and internalized the knowledge so far?
 - **Token Efficiency:**  
   Track total tokens used (questions + answers).
 - **Hallucination Penalty:**  
-  Penalize contradictory or false info introduced by A.
+  Penalise contradictory or false info introduced by A.
 - **Partial Coverage Score:**  
   Track % coverage at point of failure.
-- **Summarization Option:**  
-  Allow A to summarize rather than verbatim reproduce, with relaxed matching.
+- **Summarisation Option:**  
+  Allow A to summarise rather than verbatim reproduce, with relaxed matching.
 
 ---
 
