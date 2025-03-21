@@ -1,17 +1,15 @@
-Here’s the full markdown version of the proposed **TwinMemBench** scoring system:
-
 ---
 
 # TwinMemBench: Benchmark for Efficient Memory Alignment between Agents
 
 ## Overview
-**TwinMemBench** measures how well an LLM (Adapted Model, **A**) can imitate a given person by mapping their memory through efficient questioning and recall.
+**TwinMemBench** measures how well an LLM can imitate a given person by mapping their memory through efficient questioning and recall.
 
 ### TwinMemBench Rewards:
-1. **Efficient memory updates**
-2. **Curiosity**
-3. **High-quality question-asking**
-4. **Imitability**
+1. Efficient memory updates
+2. Curiosity
+3. High-quality question-asking
+4. Imitability
 
 ### TwinMemBench Penalizes:
 - Redundant or trivial questions
@@ -23,10 +21,10 @@ Here’s the full markdown version of the proposed **TwinMemBench** scoring syst
 ## Methodology
 
 ### Setup:
-- **Target Model (T):** Contains a 5,000-token “memory” (e.g., a 30-minute human interview transcript).
-- **Adapted Model (A):** Can:
-  1. Ask questions to T
-  2. Update its internal memory based on T’s responses
+- **Target Model ($T$):** Contains a 5,000-token “memory” (e.g., a 30-minute human interview transcript).
+- **Adapted Model ($A$):** Can:
+  1. Ask questions to $T$
+  2. Update its internal memory based on $T$’s responses
 
 ### Objective:
 A asks questions of T and updates its memory until **A's memory overlaps with T’s memory by ≥ 95%**.
