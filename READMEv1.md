@@ -1,7 +1,8 @@
 NOTE: And the way we win the benchmark is a model with two system prompts (one that it is working on) and the other crafted to ask the best questions 
 
---- 
-TwinMemBench: Benchmark for Efficient Memory Alignment between Agents 
+---
+title: TwinMemBench
+subtitle: Benchmark for Efficient Memory Alignment between Agents 
 ---
 
 About: 

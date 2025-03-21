@@ -3,6 +3,7 @@
 # TwinMemBench: Benchmark for Efficient Memory Alignment between Agents
 
 ## Overview
+
 **TwinMemBench** measures how well an LLM can imitate a given person by mapping their memory through efficient questioning and recall.
 
 ### TwinMemBench Rewards:
@@ -27,25 +28,25 @@
   2. Update its internal memory based on $T$’s responses
 
 ### Objective:
-A asks questions of T and updates its memory until **A's memory overlaps with T’s memory by ≥ 95%**.
+A asks questions of $T$ and updates its memory until **$A$'s memory overlaps with $T$’s memory by ≥ 95%**.
 
 ### Termination Conditions:
 1. **Success:**  
-   - Memory Overlap Score **M ≥ 95%**.
+   - Memory Overlap Score **$M ≥ 95%$**.
 2. **Failure:**  
-   - A fails **Update Test (U)** or **Recall Test (R)** for **3 consecutive questions**.
+   - A fails **Update Test ($U$)** or **Recall Test ($R$)** for **3 consecutive questions**.
 
 ---
 
 ## Scoring System
 
-For each question **A** asks **T**, compute:
+For each question **$A$** asks **$T$**, compute:
 
 | Metric | Purpose | Pass Criteria |
 |-------|--------|----------------|
-| **Update Test (U)** | Checks if A’s memory gained new knowledge | A's memory covers new portion of T’s memory |
-| **Recall Test (R)** | Ensures A retains previously acquired info | A passes pop-quiz on revealed knowledge |
-| **Memory Overlap Score (M)** | Measures total alignment between A and T | ≥ 95% overlap → success |
+| **Update Test ($U$)** | Checks if $A$’s memory gained new knowledge | $A$'s memory covers new portion of T’s memory |
+| **Recall Test ($R$)** | Ensures $A$ retains previously acquired info | $A$ passes pop-quiz on revealed knowledge |
+| **Memory Overlap Score ($M$)** | Measures total alignment between A and T | ≥ 95% overlap → success |
 
 **Score (S):**
 - **S = Number of successful questions asked until M ≥ 95%.**
