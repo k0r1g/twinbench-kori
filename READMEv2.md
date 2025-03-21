@@ -2,6 +2,8 @@
 
 # TwinMemBench: Benchmark for Efficient Memory Alignment between Agents
 
+---
+
 ## Overview
 
 **TwinMemBench** measures how well an LLM can imitate a given person by mapping their memory through efficient questioning and recall.
@@ -28,7 +30,7 @@
   2. Update its internal memory based on $T$’s responses
 
 ### Objective:
-A asks questions of $T$ and updates its memory until **$A$'s memory overlaps with $T$’s memory by ≥ 95%**.
+$A$ asks questions of $T$ and updates its memory until **$A$'s memory overlaps with $T$’s memory by ≥ 95%**.
 
 ### Termination Conditions:
 1. **Success:**  
