@@ -64,7 +64,7 @@ For each question **$A$** asks **$T$**, compute:
 Fraction of $T$’s memory chunks successfully internalised by $A$.
 
 **Implementation:**
-1. **Chunk** T’s memory into $$\{t_{\mathcal{1}}, t_{\mathcal{2}}, ..., t_{\mathcal{k}}\}$$ (e.g., paragraphs/facts).
+1. **Chunk** T’s memory into $${\{t_{\mathcal{1}}, t_{\mathcal{2}}, ..., t_{\mathcal{k}}\}}$$ (e.g., paragraphs/facts).
 2. After each Q&A, A’s memory = \( \{a_1, a_2, ..., a_j\} \).
 3. For each \( t_i \), check if any \( a_m \) is semantically similar (cosine similarity ≥ threshold).
 4. Compute:
