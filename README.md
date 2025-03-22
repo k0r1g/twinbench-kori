@@ -167,15 +167,15 @@ where:
 2. **Loop:**
    1. $A$ asks $T$ a question ($q$ += 1).
    2. $T$ responds.
-   3. $A$ updates memory.
-   4. **Update Test ($U$):** Test if meaningful memory is added to $A$. 
-   5. **Recall Test ($R$):** Test if $A$ has retained previously revealed knowledge.
-   6. If either test fails, increment fail streak.  
-      - If fail streak $f = 3$, **end → FAIL**.
-   7. If both pass, reset fail streak $f = 0$.
-   8. Update $A$’s memory with $T$’s answer.
-   9. Compute **$M$** (memory overlap score).
+   3. Update $A$’s memory with $T$’s answer.
+   4. Compute **$M$** (memory overlap score).
       - If **$M ≥ 0.95$**, **end → SUCCESS** $(S = q)$.
+   5. **Update Test ($U$):** Test if meaningful memory is added to $A$. 
+   6. **Recall Test ($R$):** Test if $A$ has retained previously revealed knowledge.
+   7. If either test fails, increment fail streak.  
+      - If fail streak $f = 3$, **end → FAIL**.
+   8. If both pass, reset fail streak $f = 0$.
+
 3. **Output:**
    - Final Score $S = q$, number of questions asked.
    - Outcome: **SUCCESS** or **FAIL**.
