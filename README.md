@@ -48,7 +48,7 @@ For each question **$A$** asks **$T$**, compute:
 |-------|-------------------------------|----------------|
 | **Memory Overlap ($M$)** | % of $T$'s memory $A$ has internalised | $M ≥ 0.95$ |
 | **Update Test ($U$)** | Tests if $A$ learned new knowledge from $T$  | $M_{n+1} - M_n > \tau_U$ |
-| **Recall Test ($R$)** | Tests if $A$ retains learned knowledge | $R \geq 0.85$ |
+| **Recall Test ($R$)** | Tests if $A$ retains learned knowledge | $R \geq \tau_R$ |
 | **Score ($S$)** | Number of questions asked before M ≥ 95% | $S = n \text{ where } M > 0.95$ |
 
 ---
@@ -131,7 +131,7 @@ $$sim(q_j) = \frac{e(R_A(q_j)) \cdot e(R_T(q_j))}{\|e(R_A(q_j))\| \|e(R_T(q_j))\
 
 $$R = \frac{1}{r} \sum_{j=1}^{r} sim(q_j)$$
 
-6. Recall Test passes if the average similarity score $R \geq 0.85$.
+6. Recall Test passes if the average similarity score $R \geq \tau_R$.
 
 ---
 ### 4. Final Score ($S$)
