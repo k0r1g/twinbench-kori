@@ -49,7 +49,7 @@ For each question **$A$** asks **$T$**, compute:
 | **Memory Overlap ($M$)** | % of $T$'s memory $A$ has internalised | $M ≥ 0.95$ |
 | **Update Test ($U$)** | Tests if $A$ learned new knowledge from $T$  | $M_{n+1} - M_n > \tau_U$ |
 | **Recall Test ($R$)** | Tests if $A$ retains learned knowledge | $R \geq \tau_R$ |
-| **Score ($S$)** | Number of questions asked before M ≥ 95% | $S = n \text{ where } M > 0.95$ |
+| **Score ($S$)** | Number of questions asked before M ≥ 95% | $S = n \text{ where } M ≥ 0.95$ |
 
 ---
 
