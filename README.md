@@ -25,7 +25,7 @@
 
 ### Setup:
 - **Target Model ($T$):** Contains a 5,000-token “memory” (e.g., a 30-minute human interview transcript).
-- **Adapted Model ($A$):** Can:
+- **Adapted Model ($A$):** Begins with empty memory and can:
   1. Ask questions to $T$
   2. Update its internal memory based on $T$’s responses
 
